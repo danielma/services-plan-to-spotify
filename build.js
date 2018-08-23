@@ -96,13 +96,15 @@ var apiRequest = exports.apiRequest = function apiRequest() {
 var asyncMap = exports.asyncMap = function asyncMap(itemcb, items, cb) {
     return function () {
         var resultsø1 = map(function (it) {
-            return void 0;
+            return '__unset__';
         }, items);
         var countø1 = items.length;
         return items.map(function (item, index) {
             return itemcb(item, function (it) {
                 resultsø1[index] = it;
-                return resultsø1.every(identity) ? cb(resultsø1) : void 0;
+                return resultsø1.every(function (it) {
+                    return !isEqual(it, '__unset__');
+                }) ? cb(resultsø1) : void 0;
             });
         });
     }.call(this);
@@ -123,7 +125,9 @@ var handlePlanItems = exports.handlePlanItems = function handlePlanItems(body) {
         }, body.data);
         var urlsø1 = map(planItemAttachmentsUrl, itemsWithArrangementø1);
         return asyncMap(getSpotifyUrlForAttachments, urlsø1, function (it) {
-            p('Copy and paste these tracks into a Spotify playlist');
+            p('----------------------------------------------------------------------------------');
+            p('Copy and paste these tracks into the Spotify app to add these tracks to a playlist');
+            p('----------------------------------------------------------------------------------');
             return p(it.join('\n'));
         });
     }.call(this);

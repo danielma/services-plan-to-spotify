@@ -46,14 +46,14 @@
   ([route options cb] (--api-request (Object.assign { :route route :cb cb } options))))
 
 (defn async-map [itemcb items cb]
-  (let [results (map (> nil) items)
+  (let [results (map (> :__unset__) items)
         count (.-length items)]
     (.map items
           (fn [item index]
             (itemcb item
                     (>
                      (aset results index it)
-                     (if (.every results identity) (cb results))))))))
+                     (if (.every results (> (not (= it :__unset__)))) (cb results))))))))
 
 (defn main []
   (api-request (+ "plans/" plan-id) get-plan-uri-then-items))
@@ -70,7 +70,9 @@
     (async-map get-spotify-url-for-attachments
                urls
                (>
-                (p "Copy and paste these tracks into a Spotify playlist")
+                (p "----------------------------------------------------------------------------------")
+                (p "Copy and paste these tracks into the Spotify app to add these tracks to a playlist")
+                (p "----------------------------------------------------------------------------------")
                 (p (.join it "\n"))))))
 
 (defn spotify-attachment? [attachment]
