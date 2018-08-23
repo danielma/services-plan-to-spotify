@@ -1,0 +1,8 @@
+{
+  "name": "services-plan-to-spotify",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:danielma/services-plan-to-spotify.git",
+  "author": "Daniel Ma <drailskid@yahoo.com>",
+  "license": "MIT"
+}
