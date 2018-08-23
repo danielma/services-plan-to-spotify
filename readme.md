@@ -23,7 +23,9 @@ POST service_types/565431/plans/1234/items/1238/arrangement/attachments/1241/ope
 POST service_types/565431/plans/1234/items/1235/arrangement/attachments/1242/open {}
 POST service_types/565431/plans/1234/items/1239/arrangement/attachments/1243/open {}
 POST service_types/565431/plans/1234/items/1237/arrangement/attachments/1244/open {}
-Copy and paste these tracks into a Spotify playlist
+----------------------------------------------------------------------------------
+Copy and paste these tracks into the Spotify app to add these tracks to a playlist
+----------------------------------------------------------------------------------
 spotify:track:0mKur0Or88hNvRkGxL7neI
 spotify:track:1mwmlSGms4v4A7RqKY2nvn
 spotify:track:6HndkGQ5RymiptDMVqwBII
