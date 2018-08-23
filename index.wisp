@@ -1,4 +1,4 @@
-(ns spotify
+(ns services-plan-to-spotify
   "it builds spotify playlists from pco plans"
   (:require request
             [colors.safe :as colors]
