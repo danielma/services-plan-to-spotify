@@ -4,6 +4,8 @@ It spits out text for a spotify playlist from a Planning Center Services plan
 
 ## Usage
 
+Create a personal access token for [the Planning Center API](https://api.planningcenteronline.com/oauth/applications) then run the script with the plan ID as the argument
+
 ```shell
 $ APPLICATION_ID=personal_access_token_application_id APPLICATION_SECRET=personal_access_token_application_secret node build.js 1234
 ```
